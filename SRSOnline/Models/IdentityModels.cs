@@ -98,7 +98,7 @@ namespace SRSOnline
             }
             else
             {
-                response.Redirect("~/");
+                response.Redirect("~/Views/Default");
             }
         }
     }

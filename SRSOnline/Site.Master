@@ -96,7 +96,23 @@
                                     <div class="aa-header-top-right">
                                         <ul class="aa-head-top-nav-right">
                                             <li>
-                                                <a runat="server" href="~/Account/Login">Login</a></li>
+                                                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                                    <AnonymousTemplate>
+                                                        <ul class="nav navbar-nav navbar-right">
+                                                            <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                                            <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                                        </ul>
+                                                    </AnonymousTemplate>
+                                                    <LoggedInTemplate>
+                                                        <ul class="nav navbar-nav navbar-right">
+                                                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                                            <li>
+                                                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/Default" OnLoggingOut="Unnamed_LoggingOut" />
+                                                            </li>
+                                                        </ul>
+                                                    </LoggedInTemplate>
+                                                </asp:LoginView>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -130,10 +146,10 @@
                                     <!-- / cart box -->
                                     <!-- search box -->
                                     <div class="aa-search-box">
-                                        
-                                            <input type="text" name="" id="" placeholder="Search Here ">
-                                            <button type="submit" runat="server"><span class="fa fa-search"></span></button>
-                                        
+
+                                        <input type="text" name="" id="" placeholder="Search Here ">
+                                        <button type="submit" runat="server"><span class="fa fa-search"></span></button>
+
                                     </div>
                                     <!-- / search box -->
 
@@ -162,31 +178,28 @@
                             </div>
                             <div class="navbar-collapse collapse">
                                 <!-- Left nav -->
-                                <ul class="nav navbar-nav" id="CategoryMenu" style="text-align: center">  
-                                    
+                                <ul class="nav navbar-nav" id="CategoryMenu" style="text-align: center">
+
 
                                     <li>
                                         <asp:HyperLink ID="HyperLink8" NavigateUrl="~/Views/Default" runat="server">Home</asp:HyperLink></li>
-                                    <li>
-                                        <asp:HyperLink ID="HyperLink9" NavigateUrl="~/Views/Products" runat="server">Our Products</asp:HyperLink></li>
-                                   
 
-                                   <asp:ListView ID="categoryList" ItemType="SRSOnline.Models.Category" runat="server" SelectMethod="GetCategories">
+                                    <asp:ListView ID="categoryList" ItemType="SRSOnline.Models.Category" runat="server" SelectMethod="GetCategories">
                                         <ItemTemplate>
-                                             <li>
+                                            <li>
                                                 <a href="/Views/Products.aspx?id=<%#:  Item.CategoryID %>">
                                                     <%#: Item.CategoryName %>
-                                                </a>  
-                                                 </li> 
+                                                </a>
+                                            </li>
                                         </ItemTemplate>
-                                        <ItemSeparatorTemplate>   </ItemSeparatorTemplate>
-                                    </asp:ListView>   
-                                    
+                                        <ItemSeparatorTemplate></ItemSeparatorTemplate>
+                                    </asp:ListView>
+
                                     <li>
                                         <asp:HyperLink ID="HyperLink7" NavigateUrl="~/Views/Contact" runat="server">Contact</asp:HyperLink></li>
                                     <li>
                                         <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Views/About" runat="server">AboutUs</asp:HyperLink></li>
-                                    
+
 
                                 </ul>
                             </div>
