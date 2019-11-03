@@ -1,0 +1,304 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SRSOnline.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>  SRSOnline Store</title>
+    <!-- Font awesome -->
+
+    <link href="/Content/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/Content/bootstrap.css" rel="stylesheet">
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="/Content/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <!-- Product view slider -->
+    <link rel="stylesheet" type="text/css" href="/Content/jquery.simpleLens.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="/Content/slick.css">
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="/Content/nouislider.css">
+    <!-- Theme color -->
+    <link id="switcher" href="/Content/theme-color/default-theme.css" rel="stylesheet">
+    <!-- Top Slider CSS -->
+    <link href="/Content/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+
+    <!-- Main style sheet -->
+    <link href="/Content/style.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <!-- wpf loader Two -->
+        <div id="wpf-loader-two">
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
+            </div>
+        </div>
+        <!-- / wpf loader Two -->
+        <!-- SCROLL TOP BUTTON -->
+        <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+        <!-- END SCROLL TOP BUTTON -->
+
+
+        <!-- Start header section -->
+        <div class="header-section">
+            <header id="aa-header">
+                <!-- start header top  -->
+                <div class="aa-header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-header-top-area">
+                                    <!-- start header top left -->
+                                    <div class="aa-header-top-left">
+                                        <!-- start cellphone -->
+                                        <div class="cellphone hidden-xs">
+                                            <p><span class="fa fa-phone"></span>+61-12-345-678</p>
+                                        </div>
+                                        <!-- / cellphone -->
+                                    </div>
+                                    <!-- / header top left -->
+
+                                    <div class="aa-header-top-right">
+                                        <ul class="aa-head-top-nav-right">
+                                            <li>
+                                                <a runat="server" href="~/Account/Login">Login</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / header top  -->
+
+                <!-- start header bottom  -->
+                <div class="aa-header-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-header-bottom-area">
+                                    <!-- logo  -->
+                                    <div class="aa-logo">
+                                        <asp:Image ID="logo" runat="server" src="/img/logo.png" />
+                                    </div>
+                                    <!-- / logo  -->
+
+                                    <!-- cart box -->
+                                    <div class="aa-cartbox">
+                                        <a class="aa-cart-link" href="#">
+                                            <span class="fa fa-shopping-basket"></span>
+                                            <span class="aa-cart-title"><a runat="server" href="~/ShoppingCart" id="cartCount">&nbsp;</a></span>
+                                            <span class="aa-cart-notify"></span>
+                                        </a>
+
+                                    </div>
+                                    <!-- / cart box -->
+                                    <!-- search box -->
+                                    <div class="aa-search-box">
+                                        <form action="">
+                                            <input type="text" name="" id="" placeholder="Search Here ">
+                                            <button type="submit" runat="server"><span class="fa fa-search"></span></button>
+                                        </form>
+                                    </div>
+                                    <!-- / search box -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / header bottom  -->
+            </header>
+            <!-- / header section -->
+            <!-- menu -->
+
+            <section id="menu">
+                <div class="container">
+                    <div class="menu-area">
+                        <!-- Navbar -->
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <!-- Left nav -->
+                                <ul class="nav navbar-nav" id="CategoryMenu" style="text-align: center">  
+                                    
+
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink8" NavigateUrl="~/Views/Default" runat="server">Home</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink9" NavigateUrl="~/Views/Products" runat="server">Our Products</asp:HyperLink></li>
+                                     <asp:ListView ID="categoryList"
+                                        ItemType="SRSOnline.Models.Category"
+                                        runat="server"
+                                        SelectMethod="GetCategories">
+                                        <ItemTemplate>
+                                            <b style="font-size: large; font-style: normal">
+                                                <a href="/Views/Products.aspx?id=<%#:  Item.CategoryID %>">
+                                                    <%#: Item.CategoryName %>
+                                                </a>
+                                            </b>
+                                        </ItemTemplate>
+                                        <ItemSeparatorTemplate> |  </ItemSeparatorTemplate>
+                                    </asp:ListView>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink7" NavigateUrl="~/Views/Contact" runat="server">Contact</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Views/About" runat="server">AboutUs</asp:HyperLink></li>
+                                    
+
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- / menu -->
+
+        </div>
+        <main>
+            <div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+        <div class="footer-section">
+            <!-- footer -->
+            <footer id="aa-footer">
+                <!-- footer bottom -->
+                <div class="aa-footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-footer-top-area">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="aa-footer-widget">
+                                                <h3>Main Menu</h3>
+                                                <ul class="aa-footer-nav">
+                                                    <li>
+                                                        <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Views/Home.aspx">Home</asp:HyperLink></li>
+
+                                                    <li>
+                                                        <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Views/Products.aspx">Our Products</asp:HyperLink></li>
+                                                    <li>
+                                                        <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Views/AboutUs.aspx">About US</asp:HyperLink></li>
+                                                    <li>
+                                                        <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Views/ContactUs.aspx">Contact Us</asp:HyperLink></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="aa-footer-widget">
+                                                <div class="aa-footer-widget">
+                                                    <h3>Contact Us</h3>
+                                                    <address>
+                                                        <p>Q-10, Loop Rd & The Boulevarde, Ourimbah NSW 2258</p>
+                                                        <p><span class="fa fa-phone"></span>+61 12345678</p>
+                                                        <p><span class="fa fa-envelope"></span>info@srsonlinestore.com</p>
+                                                    </address>
+                                                    <div class="aa-footer-social">
+                                                        <a href="#"><span class="fa fa-facebook"></span></a>
+                                                        <a href="#"><span class="fa fa-twitter"></span></a>
+                                                        <a href="#"><span class="fa fa-google-plus"></span></a>
+                                                        <a href="#"><span class="fa fa-youtube"></span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer-bottom -->
+                <div class="aa-footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-footer-bottom-area">
+                                    <p>Designed by <a href="#">SRS Online Store</a></p>
+                                    <div class="aa-footer-payment">
+                                        <span class="fa fa-cc-mastercard"></span>
+                                        <span class="fa fa-cc-visa"></span>
+                                        <span class="fa fa-paypal"></span>
+                                        <span class="fa fa-cc-discover"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- / footer -->
+        </div>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/Scripts/bootstrap.js"></script>
+        <!-- SmartMenus jQuery plugin -->
+        <script type="text/javascript" src="/Scripts/jquery.smartmenus.js"></script>
+        <!-- SmartMenus jQuery Bootstrap Addon -->
+        <script type="text/javascript" src="/Scripts/jquery.smartmenus.bootstrap.js"></script>
+        <!-- To Slider JS -->
+        <script src="/Scripts/sequence.js"></script>
+        <script src="/Scripts/sequence-theme.modern-slide-in.js"></script>
+        <!-- Product view slider -->
+        <script type="text/javascript" src="/Scripts/jquery.simpleGallery.js"></script>
+        <script type="text/javascript" src="/Scripts/jquery.simpleLens.js"></script>
+        <!-- slick slider -->
+        <script type="text/javascript" src="/Scripts/slick.js"></script>
+        <!-- Price picker slider -->
+        <script type="text/javascript" src="/Scripts/nouislider.js"></script>
+        <!-- Custom js -->
+        <script src="/Scripts/custom.js"></script>
+
+    </form>
+</body>
+</html>
