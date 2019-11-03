@@ -1,4 +1,5 @@
-﻿using SRSOnline.DAL;
+﻿using SRSOnline.BL;
+using SRSOnline.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -21,6 +22,10 @@ namespace SRSOnline
 
             // Initialize the product database. 
             Database.SetInitializer(new ProductDatabaseInitializer());
+
+            // Create the custom role and user.
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }

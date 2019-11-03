@@ -449,6 +449,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="BL\RoleActions.cs" />
     <Compile Include="BL\ShoppingCartActions.cs" />
     <Compile Include="Checkout\CheckoutCancel.aspx.cs">
       <DependentUpon>CheckoutCancel.aspx</DependentUpon>
