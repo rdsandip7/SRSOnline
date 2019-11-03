@@ -30,15 +30,15 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <image src='/img/<%#:Item.ImagePath%>'
+                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                        <image src='/img/<%#:Item.ImagePath%>' 
                                             width="100" height="75" border="1" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
                                         <%#:Item.ProductName%>
                                     </a>
                                     <br />

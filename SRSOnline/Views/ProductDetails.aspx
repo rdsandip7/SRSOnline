@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetails.aspx.cs" Inherits="SRSOnline.Views.ProductDetails" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<asp:FormView ID="productDetail" runat="server"
+    <asp:FormView ID="productDetail" runat="server"
         ItemType="SRSOnline.Models.Product" SelectMethod="GetProduct"
         RenderOuterTable="false">
         <ItemTemplate>
@@ -24,7 +25,14 @@
                         <span><b>Product Number:</b>&nbsp;<%#:Item.ProductID
                         %></span>
                         <br />
+                        <a href="/Views/AddToCart.aspx?productID=<%#:Item.ProductID %>">
+                            <span class="ProductListItem">
+                                <b>Add To Cart<b>
+                            </span>
+                        </a>
+                        <br />
                     </td>
+                    
                 </tr>
             </table>
         </ItemTemplate>
