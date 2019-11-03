@@ -24,8 +24,25 @@ namespace SRSOnline
             Database.SetInitializer(new ProductDatabaseInitializer());
 
             // Create the custom role and user.
-            RoleActions roleActions = new RoleActions();
-            roleActions.AddUserAndRole();
+            RoleActions roleactions = new RoleActions();
+            roleactions.adduserandrole();
+
+            // Add Routes.
+            RegisterCustomRoutes(RouteTable.Routes);
+        }
+        void RegisterCustomRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute(
+                "ProductsByCategoryRoute",
+                "Category/{categoryName}",
+                "~/Views/Products.aspx"
+            );
+            routes.MapPageRoute(
+                "ProductByNameRoute",
+                "Product/{productName}",
+                "~/Views/ProductDetails.aspx"
+            );
         }
     }
+
 }

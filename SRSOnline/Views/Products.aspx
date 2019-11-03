@@ -30,7 +30,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                    <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
                                         <image src='/img/<%#:Item.ImagePath%>' 
                                             width="100" height="75" border="1" />
                                     </a>
@@ -38,8 +38,8 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <%#:Item.ProductName%>
+                                    <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                       <%#:Item.ProductName%>
                                     </a>
                                     <br />
                                     <span>

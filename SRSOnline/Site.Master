@@ -179,7 +179,7 @@
                             <div class="navbar-collapse collapse">
                                 <!-- Left nav -->
                                 <ul class="nav navbar-nav" id="CategoryMenu" style="text-align: center">
-
+                                    <li><a runat="server" id="adminLink" visible="false" href="~/Admin/AdminPage">Admin</a></li>
 
                                     <li>
                                         <asp:HyperLink ID="HyperLink8" NavigateUrl="~/Views/Default" runat="server">Home</asp:HyperLink></li>
@@ -187,9 +187,11 @@
                                     <asp:ListView ID="categoryList" ItemType="SRSOnline.Models.Category" runat="server" SelectMethod="GetCategories">
                                         <ItemTemplate>
                                             <li>
-                                                <a href="/Views/Products.aspx?id=<%#:  Item.CategoryID %>">
-                                                    <%#: Item.CategoryName %>
-                                                </a>
+                                                <b style="font-size: large; font-style: normal">
+                                                    <a href="<%#: GetRouteUrl("ProductsByCategoryRoute", new {categoryName = Item.CategoryName}) %>">
+                                                        <%#: Item.CategoryName %>
+                                                    </a>
+                                                </b>
                                             </li>
                                         </ItemTemplate>
                                         <ItemSeparatorTemplate></ItemSeparatorTemplate>
