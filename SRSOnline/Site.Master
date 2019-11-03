@@ -174,11 +174,10 @@
                                         runat="server"
                                         SelectMethod="GetCategories">
                                         <ItemTemplate>
-                                            <b style="font-size: large; font-style: normal">
                                                 <a href="/Views/Products.aspx?id=<%#:  Item.CategoryID %>">
                                                     <%#: Item.CategoryName %>
                                                 </a>
-                                            </b>
+                                            
                                         </ItemTemplate>
                                         <ItemSeparatorTemplate> |  </ItemSeparatorTemplate>
                                     </asp:ListView>
