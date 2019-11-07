@@ -1,40 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckoutReview.aspx.cs" Inherits="SRSOnline.Checkout.CheckoutReview" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Order Review</h1>
-    <p></p>
-    <h3 style="padding-left: 33px">Products:</h3>
-    <asp:GridView ID="OrderItemList" runat="server" AutoGenerateColumns="False" GridLines="Both" CellPadding="10" Width="500" BorderColor="#efeeef" BorderWidth="33">              
-        <Columns>
-            <asp:BoundField DataField="ProductId" HeaderText=" Product ID" />        
-            <asp:BoundField DataField="Product.ProductName" HeaderText=" Product Name" />        
-            <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}"/>     
-            <asp:BoundField DataField="Quantity" HeaderText="Quantity" />        
-        </Columns>    
-    </asp:GridView>
-    <asp:DetailsView ID="ShipInfo" runat="server" AutoGenerateRows="false" GridLines="None" CellPadding="10" BorderStyle="None" CommandRowStyle-BorderStyle="None">
-        <Fields>
-        <asp:TemplateField>
-            <ItemTemplate>
-                <h3>Shipping Address:</h3>
-                <br />
-                <asp:Label ID="FirstName" runat="server" Text='<%#: Eval("FirstName") %>'></asp:Label>  
-                <asp:Label ID="LastName" runat="server" Text='<%#: Eval("LastName") %>'></asp:Label>
-                <br />
-                <asp:Label ID="Address" runat="server" Text='<%#: Eval("Address") %>'></asp:Label>
-                <br />
-                <asp:Label ID="City" runat="server" Text='<%#: Eval("City") %>'></asp:Label>
-                <asp:Label ID="State" runat="server" Text='<%#: Eval("State") %>'></asp:Label>
-                <asp:Label ID="PostalCode" runat="server" Text='<%#: Eval("PostalCode") %>'></asp:Label>
-                <p></p>
-                <h3>Order Total:</h3>
-                <br />
-                <asp:Label ID="Total" runat="server" Text='<%#: Eval("Total", "{0:C}") %>'></asp:Label>
-            </ItemTemplate>
-            <ItemStyle HorizontalAlign="Left" />
-        </asp:TemplateField>
-          </Fields>
-    </asp:DetailsView>
-    <p></p>
-    <hr />
-    <asp:Button ID="CheckoutConfirm" runat="server" Text="Complete Order" OnClick="CheckoutConfirm_Click" />
+    <div>
+        <<strong>
+            <asp:Label ID="LabelTotalText" runat="server" Text="Order Total: "></asp:Label>
+            <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
+        </strong>
+        <label for="PaymentSystem_NameText">Name:</label>
+        <div>
+            <asp:TextBox ID="NameText" runat="server" Text="Arthur Anderson" /></div>
+        <label for="PaymentSystem_NumberText">Name:</label>
+        <div>
+            <asp:TextBox ID="NumberText" runat="server" Text="4444333322221111" /></div>
+        <label for="PaymentSystem_ExpiryText">Expiry:</label>
+        <div>
+            <asp:TextBox ID="ExpiryText" runat="server" Text="2020-11" TextMode="Month" /></div>
+        <label for="PaymentSystem_CVCText">Expiry:</label>
+        <div>
+            <asp:TextBox ID="CVCText" runat="server" Text="123" /></div>
+    </div>
+    <div>
+        <asp:Button ID="PaymentButton" Text="Make payment" runat="server" OnClick="PaymentButton_Click" />
+    </div>
 </asp:Content>

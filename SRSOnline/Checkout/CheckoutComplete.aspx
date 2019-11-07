@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <h1>Checkout Complete</h1>
     <p></p>
-    <h3>Payment Transaction ID:</h3> <asp:Label ID="TransactionId" runat="server"></asp:Label>
+    <h3>Payment Transaction ID:</h3> <asp:Label ID="ResultLabel" Text="" runat="server" />
     <p></p>
     <h3>Thank You!</h3>
     <p></p>

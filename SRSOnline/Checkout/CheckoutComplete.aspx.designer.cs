@@ -15,13 +15,13 @@ namespace SRSOnline.Checkout
     {
 
         /// <summary>
-        /// TransactionId control.
+        /// ResultLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TransactionId;
+        protected global::System.Web.UI.WebControls.Label ResultLabel;
 
         /// <summary>
         /// Continue control.

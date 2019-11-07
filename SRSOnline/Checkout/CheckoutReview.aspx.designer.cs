@@ -15,30 +15,66 @@ namespace SRSOnline.Checkout
     {
 
         /// <summary>
-        /// OrderItemList control.
+        /// LabelTotalText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView OrderItemList;
+        protected global::System.Web.UI.WebControls.Label LabelTotalText;
 
         /// <summary>
-        /// ShipInfo control.
+        /// lblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView ShipInfo;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
 
         /// <summary>
-        /// CheckoutConfirm control.
+        /// NameText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CheckoutConfirm;
+        protected global::System.Web.UI.WebControls.TextBox NameText;
+
+        /// <summary>
+        /// NumberText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NumberText;
+
+        /// <summary>
+        /// ExpiryText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ExpiryText;
+
+        /// <summary>
+        /// CVCText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CVCText;
+
+        /// <summary>
+        /// PaymentButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PaymentButton;
     }
 }

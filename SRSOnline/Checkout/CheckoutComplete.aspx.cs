@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRSOnline.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,24 @@ namespace SRSOnline.Checkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var paymentObj = Session["ActivePayment"];
+            if (paymentObj != null)
+            {
+                var paymentAction = (PaymentAction)paymentObj;
+                var result = paymentAction.GetResult();
+                // deal with the result here
+                ResultLabel.Text = result.TransactionResult.ToString() + ": recieptId" + result.ReceiptId.ToString();
+            }
+        }
+        protected void Continue_Click(object sender, EventArgs e)
+        {
+            // Clear shopping cart.
+            using (SRSOnline.BL.ShoppingCartActions usersShoppingCart =
+                new SRSOnline.BL.ShoppingCartActions())
+            {
+                usersShoppingCart.EmptyCart();
+            }
+            Response.Redirect("~/Views/Default.aspx");
         }
     }
 }
