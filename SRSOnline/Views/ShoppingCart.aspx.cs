@@ -29,15 +29,17 @@ namespace SRSOnline.Views
                     lblTotal.Text = "";
                     ShoppingCartTitle.InnerText = "Shopping Cart is Empty";
                     UpdateBtn.Visible = false;
+                    CheckoutBtn.Visible = false;
                 }
             }
-
         }
+
         public List<CartItem> GetShoppingCartItems()
         {
             ShoppingCartActions actions = new ShoppingCartActions();
             return actions.GetCartItems();
         }
+
         public List<CartItem> UpdateCartItems()
         {
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
@@ -65,6 +67,7 @@ namespace SRSOnline.Views
                 return usersShoppingCart.GetCartItems();
             }
         }
+
         public static IOrderedDictionary GetValues(GridViewRow row)
         {
             IOrderedDictionary values = new OrderedDictionary();
@@ -78,10 +81,12 @@ namespace SRSOnline.Views
             }
             return values;
         }
+
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
             UpdateCartItems();
         }
+
         protected void CheckoutBtn_Click(object sender, EventArgs e)
         {
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())

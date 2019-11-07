@@ -87,6 +87,24 @@ namespace SRSOnline.Checkout
         protected global::System.Web.UI.WebControls.TextBox TBLastName;
 
         /// <summary>
+        /// Phone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Phone;
+
+        /// <summary>
+        /// TBPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBPhone;
+
+        /// <summary>
         /// Address control.
         /// </summary>
         /// <remarks>

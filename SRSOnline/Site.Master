@@ -63,11 +63,11 @@
 
 
         <!-- wpf loader Two -->
-        <div id="wpf-loader-two">
+        <%--<div id="wpf-loader-two">
             <div class="wpf-loader-two-inner">
                 <span>Loading</span>
             </div>
-        </div>
+        </div>--%>
         <!-- / wpf loader Two -->
         <!-- SCROLL TOP BUTTON -->
         <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -178,7 +178,8 @@
                             </div>
                             <div class="navbar-collapse collapse">
                                 <!-- Left nav -->
-                                <ul class="nav navbar-nav" id="CategoryMenu" style="text-align: center">
+                                <ul class="nav navbar-nav" id="
+                                    Menu" style="text-align: center">
                                     <li><a runat="server" id="adminLink" visible="false" href="~/Admin/AdminPage">Admin</a></li>
 
                                     <li>

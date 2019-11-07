@@ -27,7 +27,7 @@ namespace SRSOnline.Checkout
                 {
                     LabelTotalText.Text = "";
                     lblTotal.Text = "";
-                    
+
                     //UpdateBtn.Visible = false;
                 }
             }
@@ -48,8 +48,17 @@ namespace SRSOnline.Checkout
             paymentRequest.Expiry = DateTime.Parse(ExpiryText.Text);
             PaymentAction payment = new PaymentAction(paymentRequest);
             payment.StartPayment();
-            Session["ActivePayment"] = payment;
-            Response.Redirect("~/Checkout/CheckoutComplete.aspx");
+            if (paymentRequest != null)
+            {
+                Response.Redirect("~/Checkout/CheckoutError.aspx");
+            }
+            else
+            {
+                Session["ActivePayment"] = payment;
+                Response.Redirect("~/Checkout/CheckoutComplete.aspx");
+            }
+
+
 
 
         }

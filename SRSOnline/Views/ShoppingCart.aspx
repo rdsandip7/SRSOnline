@@ -6,30 +6,29 @@
     </div>
     <div class="col-md-12">
         <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
-            ItemType="SRSOnline.Models.CartItem" SelectMethod="GetShoppingCartItems"
-            CssClass="table table-striped table-bordered">
-            <Columns>
-
-                <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" Visible="false" />
-                <asp:BoundField DataField="Product.ProductName" HeaderText="Name" />
-                <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}" />
-                <asp:TemplateField HeaderText="Quantity">
-                    <ItemTemplate>
-                        <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Item Total">
-                    <ItemTemplate>
-                        <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Remove Item">
-                    <ItemTemplate>
-                        <asp:CheckBox ID="Remove" runat="server"></asp:CheckBox>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
+        ItemType="SRSOnline.Models.CartItem" SelectMethod="GetShoppingCartItems" 
+        CssClass="table table-striped table-bordered" >   
+        <Columns>
+        <asp:BoundField DataField="ProductID" HeaderText="ID"  SortExpression="ProductID" />        
+        <asp:BoundField DataField="Product.ProductName" HeaderText="Name" />        
+        <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}"/>     
+        <asp:TemplateField   HeaderText="Quantity">            
+                <ItemTemplate>
+                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
+                </ItemTemplate>        
+        </asp:TemplateField>    
+        <asp:TemplateField HeaderText="Item Total">            
+                <ItemTemplate>
+                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>
+                </ItemTemplate>        
+        </asp:TemplateField> 
+        <asp:TemplateField HeaderText="Remove Item">            
+                <ItemTemplate>
+                    <asp:CheckBox id="Remove" runat="server"></asp:CheckBox>
+                </ItemTemplate>        
+        </asp:TemplateField>    
+        </Columns>    
+    </asp:GridView>
         <div>
             <p></p>
             <strong>
@@ -41,10 +40,11 @@
         <table>
             <tr>
                 <td>
-                    <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" />
+                    <asp:Button ID="UpdateBtn" runat="server" CssClass="btn btn-success" Text="Update" OnClick="UpdateBtn_Click" /> <br />  
+                    
                 </td>
                 <td>
-                    <asp:Button ID="CheckoutBtn" runat="server" Text="Checkout" OnClick="CheckoutBtn_Click" />
+                    <asp:Button ID="CheckoutBtn" runat="server" CssClass="btn btn-info" Text="Checkout" OnClick="CheckoutBtn_Click" />
                 </td>
             </tr>
         </table>

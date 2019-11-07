@@ -27,7 +27,7 @@
                         <br />
                         <a href="/Views/AddToCart.aspx?productID=<%#:Item.ProductID %>">
                             <span class="ProductListItem">
-                                <b>Add To Cart<b>
+                                <span class="btn btn-success">Add To Cart</span>
                             </span>
                         </a>
                         <br />

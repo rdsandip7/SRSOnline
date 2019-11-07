@@ -19,8 +19,8 @@
     </section>
     <!-- / catg header banner section -->
     <!-- start contact section -->
-    <section id="aa-contact">
-        <div class="container">
+    <section id="aa-contact col-md-12">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-contact-area">
@@ -68,10 +68,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <asp:TextBox ID="TextBox4" runat="server" class="form-control" Rows="3" placeholder="Message"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox4" runat="server" TextMode="multiline" Columns="50" Rows="5" class="form-control"  placeholder="Message"></asp:TextBox>
 
                                             </div>
-                                            <asp:Button ID="Button1" runat="server" class="aa-secondary-btn" Text="Send" />
+                                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-spacing" Text="Send"  />
 
                                         
                                     </div>

@@ -45,24 +45,32 @@
                         <h3>Shipping Address:</h3>
 
         <br />
+
         <asp:Label ID="FirstName" runat="server" Text="FirstName"></asp:Label>
-        <asp:TextBox ID ="TBFirstName" runat="server" ></asp:TextBox>
-        <br />
+
+        <asp:TextBox ID ="TBFirstName" runat="server" CssClass="form-control" required></asp:TextBox>
+        
         <asp:Label ID="LastName" runat="server" Text="LastName" ></asp:Label>
-        <asp:TextBox ID="TBLastName" runat="server"  ></asp:TextBox>
-        <br />
+        <asp:TextBox ID="TBLastName" runat="server" CssClass="form-control"  required></asp:TextBox>
+
+        <asp:Label ID="Phone" runat="server" Text="Phone"></asp:Label>
+        <asp:TextBox ID="TBPhone" runat="server" CssClass="form-control" required></asp:TextBox>
+
+        
         <asp:Label ID="Address" runat="server" Text="Address"></asp:Label>
-        <asp:TextBox ID="TBAddress" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="TBAddress" runat="server" CssClass="form-control" required></asp:TextBox>
         <br />
         <asp:Label ID="City" runat="server" Text="City"></asp:Label>
-        <asp:TextBox ID="TBCity" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="TBCity" runat="server" CssClass="form-control" required></asp:TextBox>
+
         <asp:Label ID="State" runat="server" Text="State"></asp:Label>
-        <asp:TextBox ID="TBState" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TBState" runat="server" CssClass="form-control" required></asp:TextBox>
+
         <asp:Label ID="PostalCode" runat="server" Text="PostalCode"></asp:Label>
-        <asp:TextBox ID="TBPostalCode" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="TBPostalCode" runat="server" CssClass="form-control" required></asp:TextBox>
         
         <br />
-        <asp:Button ID="CheckoutConfirm" runat="server" Text="Complete Order" OnClick="CheckoutConfirm_Click" />
+        <asp:Button ID="CheckoutConfirm" runat="server" CssClass="btn btn-success btn-spacing" Text="Complete Order" OnClick="CheckoutConfirm_Click" />
 
     </div>
 </asp:Content>

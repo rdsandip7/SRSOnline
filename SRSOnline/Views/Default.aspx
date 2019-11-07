@@ -95,85 +95,89 @@
 
 
 
-    <!-- Products section -->
-    <section id="aa-product">
-        <asp:ListView ID="productList" runat="server"
-            DataKeyNames="ProductID" GroupItemCount="4"
-            ItemType="SRSOnline.Models.Product" SelectMethod="GetProducts">
-            <EmptyDataTemplate>
-                <table>
-                    <tr>
-                        <td>No data was returned.</td>
-                    </tr>
-                </table>
-            </EmptyDataTemplate>
-            <EmptyItemTemplate>
-                <td />
-            </EmptyItemTemplate>
-            <GroupTemplate>
-                <tr id="itemPlaceholderContainer" runat="server">
-                    <td id="itemPlaceholder" runat="server"></td>
-                </tr>
-            </GroupTemplate>
-            <ItemTemplate>
-                <td runat="server">
+    <div class="col-md-12">
+        <!-- Products section -->
+        <section id="aa-product">
+            <asp:ListView ID="productList" runat="server"
+                DataKeyNames="ProductID" GroupItemCount="4"
+                ItemType="SRSOnline.Models.Product" SelectMethod="GetProducts">
+                <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>
-                                <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                    <image src='/img/<%#:Item.ImagePath%>'
-                                        width="100" height="75" border="1" />
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                    <%#:Item.ProductName%>
-                                </a>
-                                <br />
-                                <span>
-                                    <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
-                                </span>
-                                <br />
-                                <a href="/Views/AddToCart.aspx?productID=<%#:Item.ProductID %>">
-                                    <span class="ProductListItem">
-                                        <b>Add To Cart<b>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
+                            <td>No data was returned.</td>
                         </tr>
                     </table>
-                    </p>
-                </td>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <table style="width: 100%;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
-                                    <tr id="groupPlaceholder"></tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr></tr>
-                    </tbody>
-                </table>
-            </LayoutTemplate>
-        </asp:ListView>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                    <td />
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                    <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                        <image src='/img/<%#:Item.ImagePath%>'
+                                            width="150" height="150" border="1" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="/Views/ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                        <%#:Item.ProductName%>
+                                    </a>
+                                    <br />
+                                    <span>
+                                        <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
+                                    </span>
+                                    <br />
+                                    <a href="/Views/AddToCart.aspx?productID=<%#:Item.ProductID %>">
+                                        <span class="ProductListItem">
+                                            <span class="btn btn-success">Add To Cart</span>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        </p>
+                    </td>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
+                                        <tr id="groupPlaceholder"></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
 
 
-        <%--Contact Us Call to Actions--%>
-        <asp:HyperLink CssClass="aa-browse-btn" NavigateUrl="~/Views/Contact.aspx" ID="HyperLink1" runat="server">Contact Us<span class="fa fa-long-arrow-right"/></asp:HyperLink>
+            <div class="text-center btn-spacing">
+                <%--Contact Us Call to Actions--%>
+                <asp:HyperLink CssClass="aa-browse-btn" NavigateUrl="~/Views/Contact.aspx" ID="HyperLink1" runat="server">Contact Us<span class="fa fa-long-arrow-right"/></asp:HyperLink>
+            </div>
 
 
-    </section>
-    <!-- / Products section -->
+        </section>
+        <!-- / Products section -->
+    </div>
 </asp:Content>

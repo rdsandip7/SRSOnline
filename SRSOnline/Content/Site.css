@@ -1,14 +1,14 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
+﻿
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.center-bl {
+    margin-left: 40%;
+    margin-right: 40%
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -28,4 +28,9 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+.btn-spacing
+{
+    margin:10px;
+   
 }

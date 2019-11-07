@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="SRSOnline.Views.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row">
-    <div class="container">
+    <div class="row col-md-12">
+    <div class="container-fluid">
         <h2>About Us</h2>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenea
@@ -25,7 +25,7 @@
             convallis aenean et. Ipsum faucibus vitae aliquet nec. Felis eget velit aliquet sagittis id consectetur purus ut. Volutpat sed cras ornare arcu
             dui vivamus arcu felis bibendum. Neque aliquam vestibulum morbi blandit.
         </p>
-        <p>
+        <p class="text-center">
             <asp:HyperLink CssClass="aa-browse-btn" ID="HyperLink1" NavigateUrl="~/Views/Contact.aspx" runat="server">Contact Us<span class="fa fa-long-arrow-right"/></asp:HyperLink>
         </p>
     </div>
